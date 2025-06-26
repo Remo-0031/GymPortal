@@ -1,0 +1,1 @@
+GYMPortal is a simple desktop application built with Java, JavaFX, and MySQL that simulates a basic gym management system. This project serves as a hands-on exercise to deepen my understanding of Java GUI development and database integration — key skills for real-world software development and future employment.
