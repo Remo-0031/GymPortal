@@ -32,6 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -39,19 +40,43 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymmembership.HomeController">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-        <Label alignment="CENTER" layoutX="703.0" layoutY="101.0" style="&#10;" text="Something" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+            <VBox layoutX="-11.0" layoutY="339.0" prefHeight="372.0" prefWidth="314.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="125.0" prefWidth="330.0" text="Add Member">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="125.0" prefWidth="330.0" text="SCAN Mode">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="125.0" prefWidth="330.0" text="Log Out">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+        <Label alignment="CENTER" layoutX="806.0" layoutY="92.0" style="&#10;" text="HOME" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
           <font>
             <Font size="96.0" />
           </font>
         </Label>
-            <TableView layoutX="367.0" layoutY="265.0" prefHeight="622.0" prefWidth="1228.0">
+            <TableView fx:id="mainTable" fixedCellSize="24.0" layoutX="367.0" layoutY="265.0" prefHeight="622.0" prefWidth="1228.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="IDCol" prefWidth="67.66665649414062" text="ID" />
+                <TableColumn fx:id="NameCol" prefWidth="264.0" text="NAME" />
+                  <TableColumn fx:id="BDateCol" minWidth="0.0" prefWidth="220.0" text="BIRTHDATE" />
+                  <TableColumn fx:id="JDateCol" prefWidth="234.0" text="JOIN DATE" />
+                  <TableColumn fx:id="DDateCol" minWidth="0.0" prefWidth="273.0" text="DUE DATE" />
+                  <TableColumn fx:id="isStudentCol" prefWidth="83.333251953125" text="STUDENT " />
+                  <TableColumn fx:id="withTrainerCol" minWidth="3.66668701171875" prefWidth="89.666748046875" text="TRAINER" />
               </columns>
             </TableView>
       </children>
