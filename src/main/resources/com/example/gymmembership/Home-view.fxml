@@ -79,6 +79,16 @@
                   <TableColumn fx:id="withTrainerCol" minWidth="3.66668701171875" prefWidth="89.666748046875" text="TRAINER" />
               </columns>
             </TableView>
+            <Button fx:id="up_button" onAction="#openUpdateForm" layoutX="1654.0" layoutY="400.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="207.0" style="-fx-background-color: green;" text="UPDATE" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="del_button" onAction="#removeRow" layoutX="1654.0" layoutY="495.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="207.0" style="-fx-background-color: RED;" text="DELETE" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Button>
       </children>
     </AnchorPane>
   </children>
