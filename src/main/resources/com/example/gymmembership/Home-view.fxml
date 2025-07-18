@@ -51,7 +51,7 @@
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="125.0" prefWidth="330.0" text="SCAN Mode">
+                  <Button mnemonicParsing="false" prefHeight="125.0" prefWidth="330.0" text="SCAN Mode" onAction="#ScanMode">
                      <font>
                         <Font size="22.0" />
                      </font>

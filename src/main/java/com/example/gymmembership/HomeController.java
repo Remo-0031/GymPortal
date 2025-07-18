@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -163,4 +164,15 @@ public class HomeController implements Initializable {
         }
     }
 
+    @FXML
+    private void ScanMode(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Scan-View.fxml"));
+        Parent root = loader.load();
+
+        Scene sc = new Scene(root,1920,1080);
+        Stage nStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        nStage.setScene(sc);
+        nStage.setMaximized(true);
+        nStage.setResizable(false);
+    }
 }

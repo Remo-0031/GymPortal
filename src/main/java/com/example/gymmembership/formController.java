@@ -1,13 +1,23 @@
 package com.example.gymmembership;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -44,6 +54,9 @@ public class formController{
     private CheckBox Trainer_CheckBox;
 
     private member memberInformation;
+
+    @FXML
+    private Button generateQR_button;
 
     public void setMember(member memberI){
         memberInformation = memberI;
@@ -93,6 +106,26 @@ public class formController{
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    private void generateQR(ActionEvent event) throws Exception {
+        String path = "src/main/resources/images/QRs/" + memberInformation.getID() + ".jpg";
+
+        BitMatrix matrix = new MultiFormatWriter().encode(String.valueOf(memberInformation.getID()), BarcodeFormat.QR_CODE,500,500);
+
+        MatrixToImageWriter.writeToPath(matrix,"jpg", Paths.get(path));
+
+        File imageFile = new File(path);
+        if (Desktop.isDesktopSupported()){
+            try {
+                Desktop.getDesktop().open(imageFile);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }else {
+            System.out.println("ERR");
         }
     }
 }

@@ -86,8 +86,9 @@
             </MenuButton>
             <CheckBox fx:id="Trainer_CheckBox" layoutX="14.0" layoutY="254.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="96.0" text="Avail Trainer" />
             <CheckBox fx:id="Student_CheckBox" layoutX="197.0" layoutY="254.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="96.0" text="Student" />
-            <Button fx:id="Proceed_Button" onAction="#UpdateMember" layoutX="207.0" layoutY="336.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" style="-fx-background-color: Green;" text="UPDATE" textFill="WHITE" />
+            <Button fx:id="Proceed_Button" layoutX="207.0" layoutY="336.0" mnemonicParsing="false" onAction="#UpdateMember" prefHeight="25.0" prefWidth="117.0" style="-fx-background-color: Green;" text="UPDATE" textFill="WHITE" />
             <Button fx:id="Cancel_Button" layoutX="21.0" layoutY="336.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" style="-fx-background-color: ReD;" text="CANCEL" textFill="WHITE" />
+            <Button fx:id="generateQR_button" layoutX="113.0" layoutY="297.0" mnemonicParsing="false" onAction="#generateQR" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: BLUE;" text="Generate QR CODE" textFill="LIME" />
          </children>
     </AnchorPane>
   </children>
